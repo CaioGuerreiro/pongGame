@@ -1,6 +1,7 @@
 package pong;
 
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
@@ -56,11 +57,22 @@ public class Game extends Canvas implements Runnable, KeyListener {
             this.createBufferStrategy(3);
             return;
         }
+        // renderizacao da tela do jogo
         Graphics g = bs.getDrawGraphics();
         g.setColor(getBackground());
         g.fillRect(0, 0, WIDTH*SCALE, HEIGHT*SCALE);
+
+
+        // renderizaçao das pontuações dos jogadores
+        g.setColor(Color.BLACK);
+        g.drawString("Azul: " + ball.goalPlayerOne, 10, 20);
+        g.drawString("Vermelho: " + ball.goalPlayerTwo, 10, 40);
+
+
+        // renderizaçao dos jogadores
         playerOne.render(g);
         playerTwo.render(g);
+        
         ball.render(g);
         bs.show(); // mostrar o jogador na tela
     }

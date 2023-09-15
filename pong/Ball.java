@@ -9,6 +9,8 @@ public class Ball {
    public double x,y;
    public double speed = 2;
    public int width, height; 
+   public int goalPlayerOne = 0; // jogador azul
+   public int goalPlayerTwo = 0; // jogador vermelho
 
    public double dx, dy;
 
@@ -43,12 +45,16 @@ public class Ball {
          dx*=-1; // multiplica o eixo x por menos 1 e inverte o sentido    
 }
     if(y>= Game.HEIGHT*Game.SCALE){
-        //ponto do jogador...
+        //ponto do jogador de cima/ jogador azul / player one ...
         System.out.println("ponto do jogador de cima");
+        goalPlayerOne++;
+        System.out.println(goalPlayerOne);
         reset();
     }else if( y < 0){
-        //pontto do jogador...
+        //pontto do jogador baixo / jogador vermelho / player two...
         System.out.println("ponto do jogador de baixo");
+        goalPlayerTwo++;
+        System.out.println(goalPlayerTwo);
         reset();
     }
 
@@ -71,5 +77,8 @@ public class Ball {
    public void render(Graphics g){
     g.setColor(Color.BLACK);
     g.fillRect((int)x,(int) y, width, height);
+
+    
+    
    }
 }
