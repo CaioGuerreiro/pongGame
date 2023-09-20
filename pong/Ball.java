@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Ball {
    public double x,y;
-   public double speed = 2;
+   public double speed = 5;
    public int width, height; 
    public int goalPlayerOne = 0; // jogador azul
    public int goalPlayerTwo = 0; // jogador vermelho
@@ -31,9 +31,10 @@ public class Ball {
     x = Game.WIDTH * Game.SCALE / 2;
     y = Game.HEIGHT * Game.SCALE / 2;
 
-    int angle = new Random().nextInt(359 - 50) + 50;
+    int angle = new Random().nextInt(120 - 45) + 45;
     dx = Math.cos(Math.toRadians(angle));
     dy = Math.sin(Math.toRadians(angle));
+    
    }
 
    public void tick(){
@@ -55,6 +56,7 @@ public class Ball {
         System.out.println("ponto do jogador de baixo");
         goalPlayerTwo++;
         System.out.println(goalPlayerTwo);
+       
         reset();
     }
 
