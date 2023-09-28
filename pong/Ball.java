@@ -20,7 +20,14 @@ public class Ball {
     this.width = 10;
     this.height = 10;
 
-    int angle = new Random().nextInt(120 - 45) + 45;
+    //int angle = new Random().nextInt(120 - 45) + 45;
+    int angle = new Random().nextInt(359);
+
+    while((angle < 45 || angle > 135) && (angle < 215 || angle > 315)){
+        angle = new Random().nextInt(359); 
+    }
+    System.out.println(angle);
+    
     dx = Math.cos(Math.toRadians(angle));
     dy = Math.sin(Math.toRadians(angle));
     
@@ -32,6 +39,11 @@ public class Ball {
     y = Game.HEIGHT * Game.SCALE / 2;
 
     int angle = new Random().nextInt(120 - 45) + 45;
+
+     while((angle < 45 || angle > 135) && (angle < 215 || angle > 315)){
+        angle = new Random().nextInt(359); 
+    }
+    System.out.println(angle);
     dx = Math.cos(Math.toRadians(angle));
     dy = Math.sin(Math.toRadians(angle));
     
