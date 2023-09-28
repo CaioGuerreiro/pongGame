@@ -7,7 +7,11 @@ import java.util.Random;
 
 public class Ball {
    public double x,y;
+<<<<<<< HEAD
    public double speed = 5;
+=======
+   public double speed = 8;
+>>>>>>> 59173946b50a5d645512708f3cc8f135015230bf
    public int width, height; 
    public int goalPlayerOne = 0; // jogador azul
    public int goalPlayerTwo = 0; // jogador vermelho

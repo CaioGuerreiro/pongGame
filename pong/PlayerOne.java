@@ -18,7 +18,7 @@ public class PlayerOne{
 
     public void tick(){
         if(right){
-            x = x +10;
+            x = x + 10;
             
         }
         else if(left){
